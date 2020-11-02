@@ -12,13 +12,13 @@
             <th class="text-danger">Danger zone</th>
         </thead>
         <tbody>
-            <tr ng-repeat="estudiante in estudiantes">
-                <td>{{ estudiante.nombre }}</td>
-                <td>{{ estudiante.apellido }}</td>
-                <td>{{ estudiante.ciudad }}</td>
-                <td>{{ estudiante.fechaNacimiento }}</td>
-                <td>{{ estudiante.carrera }}</td>
-                <td>{{ estudiante.semestre }}</td>
+            <tr ng-repeat="est in estudiantes">
+                <td>{{ est.nombre }}</td>
+                <td>{{ est.apellido }}</td>
+                <td>{{ est.ciudad }}</td>
+                <td>{{ est.fechaNacimiento }}</td>
+                <td>{{ est.carrera }}</td>
+                <td>{{ est.semestre }}</td>
                 <td>
                     <input type="button" class="btn btn-danger" value="Eliminar" ng-click="eliminarEstudiante($index)" />
                 </td>

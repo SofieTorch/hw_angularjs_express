@@ -3,7 +3,7 @@ app.controller('DocenteController', function($scope, CrudService) {
     $scope.docentes = new Array()
 
     angular.element(document).ready(() => {
-        $scope.mostrarDocentes
+        $scope.mostrarDocentes()
     })
 
     $scope.mostrarDocentes = () => {
@@ -14,7 +14,7 @@ app.controller('DocenteController', function($scope, CrudService) {
 
     $scope.agregarDocente = (isValid) => {
         if(isValid) {
-            CrudService.addData('docentes', $scope.estudiante).then( (res) => {
+            CrudService.addData('docentes', $scope.docente).then( (res) => {
                 $scope.mostrarDocentes()
                 $scope.docente = new Docente()
             })
