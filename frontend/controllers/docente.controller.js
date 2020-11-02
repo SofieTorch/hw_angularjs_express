@@ -1,6 +1,7 @@
 app.controller('DocenteController', function($scope, CrudService) {
     $scope.docente = new Docente()
     $scope.docentes = new Array()
+    $scope.showAlert = false
 
     angular.element(document).ready(() => {
         $scope.mostrarDocentes()
@@ -16,6 +17,7 @@ app.controller('DocenteController', function($scope, CrudService) {
         if(isValid) {
             CrudService.addData('docentes', $scope.docente).then( (res) => {
                 $scope.mostrarDocentes()
+                $scope.showAlert = true
                 $scope.docente = new Docente()
             })
         }
@@ -26,5 +28,7 @@ app.controller('DocenteController', function($scope, CrudService) {
             $scope.mostrarDocentes()
         })
     }
+
+    $scope.hideAlert = () => $scope.showAlert = false
 
 })

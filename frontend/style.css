@@ -17,7 +17,7 @@
 }
 
 .parent-home .img-container {
-    text-align: right;
+    text-align: center;
 }
 
 @media (max-width: 992px) {
@@ -92,3 +92,15 @@
 
 /* end add styles */
 
+/* Registers styles */
+
+.no-data {
+    width: 100%;
+    text-align: center;
+}
+
+.no-data img{
+    height: 40vh;
+}
+
+/* end registers styles */

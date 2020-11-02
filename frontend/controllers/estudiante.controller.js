@@ -1,6 +1,7 @@
 app.controller('EstudianteController', function($scope, CrudService) {
     $scope.estudiante = new Estudiante()
     $scope.estudiantes = new Array()
+    $scope.showAlert = false
 
     angular.element(document).ready(() => {
         $scope.mostrarEstudiantes()
@@ -16,6 +17,7 @@ app.controller('EstudianteController', function($scope, CrudService) {
         if(isValid) {
             CrudService.addData('estudiantes', $scope.estudiante).then( (res) => {
                 $scope.mostrarEstudiantes()
+                $scope.showAlert = true
                 $scope.estudiante = new Estudiante()
             })
         }
@@ -26,5 +28,7 @@ app.controller('EstudianteController', function($scope, CrudService) {
             $scope.mostrarEstudiantes()
         })
     }
+
+    $scope.hideAlert = () => $scope.showAlert = false
 
 })

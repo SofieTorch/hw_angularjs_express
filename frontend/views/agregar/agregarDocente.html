@@ -10,6 +10,13 @@
         <div class="item">
             <h2 class="my-3">Registro de docentes</h1>
 
+            <div class="alert alert-success alert-dismissible fade show" role="alert" ng-if="showAlert">
+                El registro se completó exitosamente.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="hideAlert()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
             <form id="dlgDocente" name="formulario" ng-submit="agregarDocente(formulario.$valid)" 
                     class="form" novalidate>
 
