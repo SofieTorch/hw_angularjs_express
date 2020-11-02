@@ -1,130 +1,140 @@
 
 <div class="container-md">
 
-    <h1 class="my-3">Registro de estudiantes</h1>
+    <div class="parent-registro my-3">
 
-    <form id="dlgEstudiante" name="formulario" ng-submit="agregarEstudiante(formulario.$valid)" 
-            class="form" novalidate>
-
-        <div class="my-2">
-            <label for="txtNombre" class="form-label">Nombre:</label>
-            <input id="txtNombre" 
-                    name="nombre" class="form-control" 
-                    type="text" 
-                    ng-model="estudiante.nombre" 
-                    required ng-minlength="2" ng-maxlength="20" />
-            <div ng-show="formulario.$submitted || formulario.nombre.$touched">
-                <span ng-show="formulario.nombre.$error.required" class="text-danger">
-                    El nombre no puede estar vacío
-                </span>
-                <span ng-show="formulario.nombre.$error.minlength" class="text-danger">
-                    El nombre debe tener al menos 2 caracteres
-                </span>
-                <span ng-show="formulario.nombre.$error.maxlength" class="text-danger">
-                    El nombre debe tener menos de 20 caracteres o menos
-                </span>
-            </div>
+        <div class="item">
+            <img src="../../images/undraw_student.png" alt="">
         </div>
 
-        <div class="my-2">
-            <label for="txtApellido" class="form-label">Apellido:</label>
-            <input
-                id="txtApellido"
-                name="apellido"
-                class="form-control"
-                type="text"
-                ng-model="estudiante.apellido"
-                required ng-minlength="2" ng-maxlength="30"/>
-            <div ng-show="formulario.$submitted || formulario.apellido.$touched">
-                <span ng-show="formulario.apellido.$error.required" class="text-danger">
-                    El apellido no puede estar vacío
-                </span>
-                <span ng-show="formulario.apellido.$error.minlength" class="text-danger">
-                    El apellido debe tener al menos 2 caracteres
-                </span>
-                <span ng-show="formulario.apellido.$error.maxlength" class="text-danger">
-                    El apellido debe tener menos de 30 caracteres o menos
-                </span>
-            </div>
-        </div>
-    
-        <div class="my-2">
-            <label for="slcCiudad">Ciudad</label>
-            <select
-                name="ciudad"
-                id="slcCiudad"
-                class="form-control"
-                ng-init="estudiante.ciudad = 'Cochabamba'"
-                ng-model="estudiante.ciudad">
-                <option value="Cochabamba">Cochabamba</option>
-                <option value="La Paz">La Paz</option>
-                <option value="Santa Cruz">Santa Cruz</option>
-                <option value="Beni">Beni</option>
-            </select>
+        <div class="item">
+            <h2 class="my-3">Registro de estudiantes</h1>
+
+            <form id="dlgEstudiante" name="formulario" ng-submit="agregarEstudiante(formulario.$valid)" 
+                    class="form" novalidate>
+
+                <div class="my-2">
+                    <label for="txtNombre" class="form-label">Nombre:</label>
+                    <input id="txtNombre" 
+                            name="nombre" class="form-control" 
+                            type="text" 
+                            ng-model="estudiante.nombre" 
+                            required ng-minlength="2" ng-maxlength="20" />
+                    <div ng-show="formulario.$submitted || formulario.nombre.$touched">
+                        <span ng-show="formulario.nombre.$error.required" class="text-danger">
+                            El nombre no puede estar vacío
+                        </span>
+                        <span ng-show="formulario.nombre.$error.minlength" class="text-danger">
+                            El nombre debe tener al menos 2 caracteres
+                        </span>
+                        <span ng-show="formulario.nombre.$error.maxlength" class="text-danger">
+                            El nombre debe tener menos de 20 caracteres o menos
+                        </span>
+                    </div>
+                </div>
+
+                <div class="my-2">
+                    <label for="txtApellido" class="form-label">Apellido:</label>
+                    <input
+                        id="txtApellido"
+                        name="apellido"
+                        class="form-control"
+                        type="text"
+                        ng-model="estudiante.apellido"
+                        required ng-minlength="2" ng-maxlength="30"/>
+                    <div ng-show="formulario.$submitted || formulario.apellido.$touched">
+                        <span ng-show="formulario.apellido.$error.required" class="text-danger">
+                            El apellido no puede estar vacío
+                        </span>
+                        <span ng-show="formulario.apellido.$error.minlength" class="text-danger">
+                            El apellido debe tener al menos 2 caracteres
+                        </span>
+                        <span ng-show="formulario.apellido.$error.maxlength" class="text-danger">
+                            El apellido debe tener menos de 30 caracteres o menos
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="my-2">
+                    <label for="slcCiudad">Ciudad</label>
+                    <select
+                        name="ciudad"
+                        id="slcCiudad"
+                        class="form-control"
+                        ng-init="estudiante.ciudad = 'Cochabamba'"
+                        ng-model="estudiante.ciudad">
+                        <option value="Cochabamba">Cochabamba</option>
+                        <option value="La Paz">La Paz</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Beni">Beni</option>
+                    </select>
+                </div>
+
+                <div class="my-2">
+                    <label for="txtFechaNacimiento" class="form-label">Fecha de nacimiento:</label>
+                    <input
+                        id="txtFechaNacimiento"
+                        name="fechaNacimiento"
+                        class="form-control"
+                        type="date"
+                        ng-model="estudiante.fechaNacimiento"
+                        required/>
+                    <div ng-show="formulario.$submitted || formulario.fechaNacimiento.$touched">
+                        <span ng-show="formulario.fechaNacimiento.$error.required" class="text-danger">
+                            Debe seleccionar una fecha de nacimiento
+                        </span>
+                    </div>
+                </div>
+
+                <div class="my-2">
+                    <label for="txtCarrera" class="form-label">Carrera:</label>
+                    <input
+                        id="txtCarrera"
+                        name="carrera"
+                        class="form-control"
+                        type="text"
+                        ng-model="estudiante.carrera"
+                        required ng-minlength="2" ng-maxlength="30"/>
+                    <div ng-show="formulario.$submitted || formulario.carrera.$touched">
+                        <span ng-show="formulario.carrera.$error.required" class="text-danger">
+                            La carrera no puede estar vacía
+                        </span>
+                        <span ng-show="formulario.carrera.$error.minlength" class="text-danger">
+                            La carrera debe tener al menos 2 caracteres
+                        </span>
+                        <span ng-show="formulario.carrera.$error.maxlength" class="text-danger">
+                            La carrera debe tener 30 caracteres o menos
+                        </span>
+                    </div>
+                </div>
+
+                <div class="my-2">
+                    <label for="txtSemestre" class="form-label">Semestre:</label>
+                    <input
+                        id="txtSemestre"
+                        name="semestre"
+                        class="form-control"
+                        type="number"
+                        ng-model="estudiante.semestre"
+                        required ng-minlength="1" ng-maxlength="2"/>
+                    <div ng-show="formulario.$submitted || formulario.semestre.$touched">
+                        <span ng-show="formulario.semestre.$error.required" class="text-danger">
+                            El semestre no puede estar vacío
+                        </span>
+                        <span ng-show="formulario.semestre.$error.minlength" class="text-danger">
+                            El semestre debe tener al menos 1 caracter
+                        </span>
+                        <span ng-show="formulario.semestre.$error.maxlength" class="text-danger">
+                            El semestre debe tener máximo 2 caracteres
+                        </span>
+                    </div>
+                </div>
+
+                <input type="submit" class="btn btn-primary my-3" value="Registrar estudiante"/>
+
+            </form>
         </div>
 
-        <div class="my-2">
-            <label for="txtFechaNacimiento" class="form-label">Fecha de nacimiento:</label>
-            <input
-                id="txtFechaNacimiento"
-                name="fechaNacimiento"
-                class="form-control"
-                type="date"
-                ng-model="estudiante.fechaNacimiento"
-                required/>
-            <div ng-show="formulario.$submitted || formulario.fechaNacimiento.$touched">
-                <span ng-show="formulario.fechaNacimiento.$error.required" class="text-danger">
-                    Debe seleccionar una fecha de nacimiento
-                </span>
-            </div>
-        </div>
-
-        <div class="my-2">
-            <label for="txtCarrera" class="form-label">Carrera:</label>
-            <input
-                id="txtCarrera"
-                name="carrera"
-                class="form-control"
-                type="text"
-                ng-model="estudiante.carrera"
-                required ng-minlength="2" ng-maxlength="30"/>
-            <div ng-show="formulario.$submitted || formulario.carrera.$touched">
-                <span ng-show="formulario.carrera.$error.required" class="text-danger">
-                    La carrera no puede estar vacía
-                </span>
-                <span ng-show="formulario.carrera.$error.minlength" class="text-danger">
-                    La carrera debe tener al menos 2 caracteres
-                </span>
-                <span ng-show="formulario.carrera.$error.maxlength" class="text-danger">
-                    La carrera debe tener 30 caracteres o menos
-                </span>
-            </div>
-        </div>
-
-        <div class="my-2">
-            <label for="txtSemestre" class="form-label">Semestre:</label>
-            <input
-                id="txtSemestre"
-                name="semestre"
-                class="form-control"
-                type="number"
-                ng-model="estudiante.semestre"
-                required ng-minlength="1" ng-maxlength="2"/>
-            <div ng-show="formulario.$submitted || formulario.semestre.$touched">
-                <span ng-show="formulario.semestre.$error.required" class="text-danger">
-                    El semestre no puede estar vacío
-                </span>
-                <span ng-show="formulario.semestre.$error.minlength" class="text-danger">
-                    El semestre debe tener al menos 1 caracter
-                </span>
-                <span ng-show="formulario.semestre.$error.maxlength" class="text-danger">
-                    El semestre debe tener máximo 2 caracteres
-                </span>
-            </div>
-        </div>
-
-        <input type="submit" class="btn btn-primary my-3" value="Registrar estudiante"/>
-
-    </form>
+    </div>
 
 </div>
