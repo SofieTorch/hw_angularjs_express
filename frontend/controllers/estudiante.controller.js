@@ -2,6 +2,7 @@ app.controller('EstudianteController', function($scope, CrudService) {
     $scope.estudiante = new Estudiante()
     $scope.estudiantes = new Array()
     $scope.showAlert = false
+    $scope.noData = true
 
     angular.element(document).ready(() => {
         $scope.mostrarEstudiantes()
@@ -10,6 +11,7 @@ app.controller('EstudianteController', function($scope, CrudService) {
     $scope.mostrarEstudiantes = () => {
         CrudService.getData('estudiantes').then( (res) => {
             $scope.estudiantes = res.data
+            $scope.noData = !($scope.estudiantes.length > 0)
         })
     }
 
